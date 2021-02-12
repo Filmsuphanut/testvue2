@@ -1,11 +1,14 @@
 <template>
 
   <v-app>
+
     <v-app-bar
       app
       color="primary"
       dark
     >
+
+    
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -66,3 +69,7 @@ export default {
 
 };
 </script>
+
+<style>
+
+</style>
