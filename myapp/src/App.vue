@@ -1,4 +1,5 @@
 <template>
+
   <v-app>
     <v-app-bar
       app
@@ -38,23 +39,30 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <Zawarudo/>
+      <!--<HelloWorld/>-->
     </v-main>
+
+
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+//import HelloWorld from './components/HelloWorld';
+import Zawarudo from './components/index';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    //HelloWorld,
+    Zawarudo
   },
 
   data: () => ({
     //
   }),
+
+
 };
 </script>
