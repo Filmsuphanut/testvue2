@@ -1,31 +1,37 @@
 <template>
+  
   <v-container>
         <div class="home">
             <h1 class="red lighten-1 dark--text">
-                Hello this is my appasd
+                Welcome to my website
             </h1>
             <p1 class="blue darken-3 white--text">
                 By Filmsuphanut
             </p1>
         </div> 
-        <v-btn color="pink green--text" >Click</v-btn>
+        
+        <v-btn flat @click="mode"><v-icon>dvr</v-icon></v-btn>
   </v-container>
+
+
+  
 </template>
 
 <script>
   export default {
-      methods:{
-        darkMode() {
-            this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-        }
+    props:{
+
+    },
+    methods:{
+      mode(){
+        this.$vuetify.theme.dark = !this.$vuetify.theme.dark
       }
+    }
   }
 </script>
 
 
 <style>
-
-
 
 </style>
 

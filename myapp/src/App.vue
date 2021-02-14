@@ -1,31 +1,37 @@
 <template>
 
-  <v-app id="main" :style="{background: $vuetify.theme.themes[theme].background}">
-    <Navkuy/>
-
+  <v-app>
+   
     <v-main>
-      <Zawarudo/>
       <!--<HelloWorld/>-->
+      <Navkuy/>
+      <router-view :employsend="emp" id="bimage"></router-view>
+      
     </v-main>
 
 
   </v-app>
+  
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld';
-import Zawarudo from './components/index';
-import Navkuy from './components/Navbar';
+ import Navkuy from './views/Navbar';
+
+
 export default {
   name: 'App',
   components: {
     //HelloWorld,
-    Zawarudo,Navkuy
+    Navkuy
   },
-  data: () => ({
-    return :{
+  data() {
+    return{
+      emp: [
+        {id:1,name:'kuy1',email:'kuymail1'},{id:2,name:'kuy2',email:'kuymail2'},{id:3,name:'kuy3',email:'kuymail3'},
+      ],    
     }
-  }),
+  },
   computed:{
     theme(){
       return (this.$vuetify.theme.dark) ? 'dark' : 'light'
@@ -35,4 +41,9 @@ export default {
 </script>
 
 <style>
+#bimage{
+  background: url('./image/backjj.jpg')
+    no-repeat center center fixed !important;
+  background-size: cover;
+}
 </style>

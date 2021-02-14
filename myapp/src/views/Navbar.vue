@@ -9,17 +9,19 @@
       <div class="d-flex align-center">
 
       </div>
-          <v-btn flat herf="" taget="_blank" >
+
+          <v-btn flat to="/">
           <v-icon left>home</v-icon>
           <span>หน้าa</span>
           </v-btn>
       <v-spacer></v-spacer>
 
 
-          <v-btn flat herf="#" taget="_blank" >
+          <v-btn flat to="Em">
           <v-icon left>verified</v-icon>
-          <span>หน้าh</span>
+          <span>หน้าEm</span>
           </v-btn>
+
     </v-app-bar>
 
     
