@@ -6,21 +6,23 @@
       light
     >  
     
-      <div class="d-flex align-center">
+        <v-btn to="/">
+        <v-icon left>home</v-icon>
+        <span>หน้าa</span>
+        </v-btn>
 
-      </div>
+        <v-btn  to="/Testback">
+        <v-icon left>home</v-icon>
+        <span>หน้าอะไรไม่รู้</span>
+        </v-btn>
 
-          <v-btn flat to="/">
-          <v-icon left>home</v-icon>
-          <span>หน้าa</span>
-          </v-btn>
       <v-spacer></v-spacer>
 
 
-          <v-btn flat to="Em">
-          <v-icon left>verified</v-icon>
-          <span>หน้าEm</span>
-          </v-btn>
+        <v-btn to="Em">
+        <v-icon left>verified</v-icon>
+        <span>หน้าEm</span>
+        </v-btn>
 
     </v-app-bar>
 

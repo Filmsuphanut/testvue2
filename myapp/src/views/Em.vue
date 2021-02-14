@@ -1,33 +1,44 @@
-<template id="bimage">
+<template>
   <v-container>
-    <div>
-      <table id="testtable" > 
-        <tr>
-          <th>Employee name</th>
-          <th>Employee email</th>
-        </tr>
-        <tr v-for="employ in employsend" :key="employ.id">
-          <td>{{ employ.name }}</td>
-          <td>{{ employ.email }}</td>
-        </tr>
-      </table>
-    </div>
 
+  
+  <div>
+    <Emform @add:em="employadd" />
+    <Emtable :employsend="emp"/>
+  </div>
+
+
+  
   </v-container>
 </template>
 
 <script>
+
+  import Emform from "./Emform"
+  import Emtable from "./Emtable"
+
   export default {
       data(){
         return{
-
+          emp:[
+            {id:1,name:'kuy1',email:'kuymail1'},
+          ],
         }
       },
       methods:{
+        employadd(employee){
+          const lastid = this.emp.length > 0 ? this.emp[this.emp.length - 1].id : 0;
+          const id = lastid + 1
+          const NewEmp = {...employee,id};
+          console.log(lastid);
+          this.emp = [...this.emp ,NewEmp]
+        }
       },
-      props:{
-        employsend: Array
+      components:{
+        Emform,Emtable
       }
+      
+      
   }
 </script>
 

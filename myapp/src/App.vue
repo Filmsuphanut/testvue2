@@ -2,10 +2,10 @@
 
   <v-app>
    
-    <v-main>
+    <v-main id="bimage">
       <!--<HelloWorld/>-->
       <Navkuy/>
-      <router-view :employsend="emp" id="bimage"></router-view>
+      <router-view></router-view>
       
     </v-main>
 
@@ -26,16 +26,16 @@ export default {
     Navkuy
   },
   data() {
-    return{
-      emp: [
-        {id:1,name:'kuy1',email:'kuymail1'},{id:2,name:'kuy2',email:'kuymail2'},{id:3,name:'kuy3',email:'kuymail3'},
-      ],    
+    return{    
     }
   },
   computed:{
     theme(){
       return (this.$vuetify.theme.dark) ? 'dark' : 'light'
     }
+  },
+  method:{
+
   }
 };
 </script>

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 //import Home from '../views/Home.vue'
 import Index from '../views/index.vue'
 import Em from '../views/Em.vue'
+import TB from '../views/testback.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
     path: '/Em',
     name: 'Em',
     component: Em
+  },
+  {
+    path: '/TestBack',
+    name: 'TestBack',
+    component: TB
   },
 ]
 
