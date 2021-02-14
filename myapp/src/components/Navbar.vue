@@ -9,7 +9,7 @@
       <div class="d-flex align-center">
 
       </div>
-          <v-btn flat herf="#" taget="_blank" >
+          <v-btn flat herf="" taget="_blank" >
           <v-icon left>home</v-icon>
           <span>หน้าa</span>
           </v-btn>
@@ -29,6 +29,7 @@
 <script>
 export default {
     //npm install --save material-design-icons-iconfont
+    
 }
 </script>
 

@@ -16,29 +16,23 @@
 //import HelloWorld from './components/HelloWorld';
 import Zawarudo from './components/index';
 import Navkuy from './components/Navbar';
-
 export default {
   name: 'App',
-
   components: {
     //HelloWorld,
     Zawarudo,Navkuy
   },
-
   data: () => ({
     return :{
     }
   }),
-
   computed:{
     theme(){
       return (this.$vuetify.theme.dark) ? 'dark' : 'light'
     }
   }
-
 };
 </script>
 
 <style>
-
 </style>
