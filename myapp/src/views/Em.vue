@@ -21,7 +21,7 @@
       data(){
         return{
           emp:[
-            {id:1,name:'kuy1',email:'kuymail1'},
+            {id:1,name:'hello',email:'hello@mail.com'},
           ],
         }
       },

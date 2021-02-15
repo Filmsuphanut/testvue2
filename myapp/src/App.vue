@@ -2,7 +2,7 @@
 
   <v-app>
    
-    <v-main id="bimage">
+    <v-main>
       <!--<HelloWorld/>-->
       <Navkuy/>
       <router-view></router-view>
