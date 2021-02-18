@@ -1,11 +1,11 @@
-<template>
+<template >
 
   <v-app>
    
     <v-main>
       <!--<HelloWorld/>-->
       <Navkuy/>
-      <router-view></router-view>
+      <router-view  id="bimage"></router-view>
       
     </v-main>
 
@@ -42,7 +42,7 @@ export default {
 
 <style>
 #bimage{
-  background: url('./image/backjj.jpg')
+  background: url('./image/backjj2.jpg')
     no-repeat center center fixed !important;
   background-size: cover;
 }

@@ -1,6 +1,6 @@
 <template>
   
-  <v-container>
+  <v-container >
         <div class="home">
             <h1 class="red lighten-1 dark--text">
                 Welcome to my website
