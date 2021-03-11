@@ -1,16 +1,29 @@
 <template>
   
-  <v-container >
-        <div class="home">
-            <h1 class="red lighten-1 dark--text">
+  <v-container>
+   
+        <div class="red lighten-1 dark--text">
+            <h1 >
                 Welcome to my website
             </h1>
-            <p1 class="blue darken-3 white--text">
+        </div>
+          <!--
+            <p1 id="p" class="blue darken-3 white--text">
                 By Filmsuphanut
             </p1>
-        </div> 
+            -->
         
-        <v-btn flat @click="mode"><v-icon>dvr</v-icon></v-btn>
+         
+        <div> 
+        <v-btn @click="mode"><v-icon>dvr</v-icon></v-btn>
+        
+        <form @submit="postmethod" method="post">
+          <input type="text" name="author" v-model="posts.author">
+          <input type="text" name="title" v-model="posts.title"> 
+          <button type="submit">Post</button>
+        </form>
+        </div>
+
   </v-container>
 
 
@@ -18,14 +31,35 @@
 </template>
 
 <script>
+
+import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+Vue.use(VueAxios, axios)
+
   export default {
+    name:"index",
     props:{
 
+    },
+    data(){
+      return{
+        posts:{
+          title:null,author:null
+        }
+      }
     },
     methods:{
       mode(){
         this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      },
+      postmethod(e){
+        this.axios("http://localhost:3000/").then((result)=>{console.warn(result)})
+        console.log(this.posts)
+        e.preventDefault();
       }
+
+
     }
   }
 </script>
