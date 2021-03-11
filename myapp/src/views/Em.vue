@@ -8,7 +8,6 @@
   </div>
 
 
-  
   </v-container>
 </template>
 

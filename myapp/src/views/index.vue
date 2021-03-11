@@ -12,22 +12,30 @@
                 By Filmsuphanut
             </p1>
             -->
-        
+
          
         <div> 
         <v-btn @click="mode"><v-icon>dvr</v-icon></v-btn>
-        
+        <v-btn @click="getdata"><v-icon>dvr</v-icon></v-btn>
+        <!--
         <form @submit="postmethod" method="post">
-          <input type="text" name="author" v-model="posts.author">
-          <input type="text" name="title" v-model="posts.title"> 
+          <input type="text" name="author" v-model="posts.name">
+          <input type="text" name="title" v-model="posts.pass"> 
           <button type="submit">Post</button>
-        </form>
+        </form>-->
         </div>
+        <div>
+          <table>
+            <tr v-for="i in todos" :key="i.id">
+              <td>{{i.id}}</td>
+              <td>{{i.title}}</td>
+              <td>{{i.completed}}</td>
+            </tr>
+          </table>
+        </div>        
 
   </v-container>
 
-
-  
 </template>
 
 <script>
@@ -36,7 +44,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
-
+//https://jsonplaceholder.typicode.com/todos
   export default {
     name:"index",
     props:{
@@ -45,19 +53,35 @@ Vue.use(VueAxios, axios)
     data(){
       return{
         posts:{
-          title:null,author:null
-        }
+          name:null,pass:null
+        },
+
+        todos:[
+          {id: 0,title: "null",completed:"null"}
+        ]
+
+
       }
     },
+
     methods:{
+      // postmethod(e){
+      //   this.axios.post("http://localhost:3000/",this.posts).then((res)=>{console.warn(JSON.stringify(res.data))})
+      //   e.preventDefault();
+      // },
+      
+      async getdata(){
+        let buffer = await axios.get("https://jsonplaceholder.typicode.com/todos")
+        for(let i = 0 ; i < buffer.data.length ; i++){
+          this.todos.push(buffer.data[i])
+        }        
+        console.log(this.todos)
+        
+      },
+      
       mode(){
         this.$vuetify.theme.dark = !this.$vuetify.theme.dark
       },
-      postmethod(e){
-        this.axios("http://localhost:3000/").then((result)=>{console.warn(result)})
-        console.log(this.posts)
-        e.preventDefault();
-      }
 
 
     }
